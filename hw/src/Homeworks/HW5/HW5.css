@@ -1,0 +1,33 @@
+.key {
+    background-color: white;
+    border: 1px solid grey;
+    padding:5px 10px;
+    margin:10px;
+    font-weight: 600;
+}
+
+.key:active {
+    background-color: black;
+    color: white;
+}
+
+.clear {
+    padding:5px 10px;
+    margin:10px;
+    background-color: rgb(249, 208, 208);
+    border: 1px solid grey;
+    font-weight: 600;
+}
+
+.caps-lock {
+    background-color: white;
+    border: 1px solid grey;
+    padding:5px 10px;
+    margin:10px;
+    font-weight: 600;
+}
+
+.on {
+    background-color: black;
+    color: white;
+}
