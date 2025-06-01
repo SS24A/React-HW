@@ -1,0 +1,97 @@
+.card {
+    width: 260px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    font-family: sans-serif;
+    position: relative;
+}
+
+.card-image-container {
+    position: relative;
+}
+
+
+.card-image-container > img{
+    height: 240px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card-image {
+    width: 100%;
+    display: block;
+}
+
+.heart-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5em;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 5px;
+}
+
+.dot {
+    width: 5px;
+    height: 5px;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.7;
+}
+
+.dot.active {
+    opacity: 1;
+}
+
+.card-info {
+    padding: 15px;
+}
+
+.location {
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.distance {
+    color: #717171;
+    font-size: 0.7em;
+    margin-bottom: 5px;
+}
+
+.date {
+    color: #717171;
+    font-size: 0.7em;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 0.7em;
+    font-weight: bold;
+}
+
+.price > span {
+    font-weight: lighter;
+    color: #717171;
+}
+
+.heart-svg-style {
+     display: block; 
+     fill: rgba(0, 0, 0, 0.5); 
+     height: 20px; 
+     width: 20px; 
+     stroke: var(--linaria-theme_palette-icon-primary-inverse); 
+     stroke-width: 2; 
+     overflow: visible; 
+     stroke: white;
+}

@@ -1,5 +1,5 @@
-import HW2 from './Homeworks/HW2/HW2'
-
+// import HW2 from './Homeworks/HW2/HW2'
+import HW3 from './Homeworks/HW3/HW3'
 // import HW5 from './Homeworks/HW5/HW5'
 // import HW6 from './Homeworks/HW6/HW6'
 // import HW7 from './Homeworks/HW7/HW7'
@@ -9,7 +9,8 @@ import HW2 from './Homeworks/HW2/HW2'
 function App() {
     return (
         <div className="App">
-            <HW2 />
+            {/* <HW2 /> */}
+            <HW3 />
             {/* <HW5 /> */}
             {/* <HW6 /> */}
             {/* <HW7 /> */}
