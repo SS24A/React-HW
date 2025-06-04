@@ -1,0 +1,229 @@
+/* Basic Stepper */
+
+.header-ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.li {
+    padding: 0.5rem;
+    align-items: center;
+    display: flex;
+    flex: 1 1 auto;
+    cursor: pointer;
+}
+
+.li-last {
+    padding: 0.5rem;
+}
+
+.num-btn {
+    transition: box-shadow 0.2s;
+    background: #ffffff;
+    border: 0 none;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.num-btn span:first-child {
+    border: 1px solid #f3f4f6;
+    border-width: 2px;
+    min-width: 2rem;
+    line-height: 2rem;
+    font-size: 1.143rem;
+    border-radius: 50%;
+    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.num-btn span:nth-child(2) {
+    margin-left: 0.5rem;
+    font-weight: 700;
+    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.tape {
+    height: 2px;
+    margin-inline-start: 1rem;
+    transition: box-shadow 0.2s;
+    flex: 1 1 0;
+}
+
+.panel-wrap {
+    padding: 1.25rem;
+}
+
+.middle-div {
+    height: 12rem !important;
+    display: flex !important;
+}
+
+.middle-div div:first-child {
+    border-radius: 10px !important;
+    border-style: dashed !important;
+    border-width: 2px !important;
+    flex: 1 1 auto !important;
+    justify-content: center !important;
+    display: flex !important;
+    border-color: rgb(228, 225, 225) !important;
+    align-items: center !important;
+    color: #4b5563;
+    font-family: sans-serif;
+}
+
+.end-div {
+    padding-top: 1.5rem !important;
+    justify-content: space-between !important;
+    display: flex !important;
+}
+
+.end-div button {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    border-radius: 6px;
+}
+
+.back-btn {
+    color: #ffffff;
+    background: #64748b;
+    border: 1px solid #64748b;
+}
+
+.next-btn {
+    color: #ffffff;
+    background: #06b6d4;
+    border: 1px solid #06b6d4;
+}
+
+.end {
+    justify-content: flex-end !important;
+}
+
+/* Basic Breadcrumb */
+
+.bread-crumb-container {
+    padding: 2rem;
+    justify-content: center !important;
+    display: flex !important;
+}
+
+.bread-crumb {
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.bread-crumb-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+/* Meter Group */
+
+.meter-group-container {
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    max-width: 850px;
+    border: 1px solid lightgrey;
+}
+
+.meter-group-meters {
+    height: 0.5rem;
+    background: #e5e7eb;
+    border-radius: 6px;
+    display: flex;
+}
+
+
+.meter-group-meters span:first-child {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+.meter-group-meters span:last-child {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.meter-group ol {
+    margin: 0;
+    margin-top: 0.8rem;
+    padding: 0;
+    list-style-type: none;
+}
+
+.meter-group li {
+    display: inline-flex;
+    align-items: center;
+}
+
+.meter-group-marker {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 100%;
+    margin-right: 0.5rem;
+}
+
+/* Timeline */
+
+.timeline-container {
+    border-radius: 8px;
+    padding: 42px 24px 50px;
+    border: 1px solid rgb(2 2 2 / 21%);
+    max-width: 450px;
+}
+
+.timeline {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.timeline-item {
+    position: relative;
+}
+
+.item-tail {
+    position: absolute;
+    inset-block-start: 10px;
+    inset-inline-start: 4px;
+    height: 32px;
+    border-inline-start: 2px solid rgba(5, 5, 5, 0.06);
+}
+
+.item-head {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border: 3px solid #4444d9;
+    border-radius: 50%;
+}
+
+.item-content {
+    min-height: 42px;
+    position: relative;
+    inset-block-start: -4px;
+    margin-inline-start: 30px;
+    color:rgb(68, 66, 66)
+}
+
+.multiple {
+    padding: 3px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.icon {
+    margin-right: 5px;
+}
