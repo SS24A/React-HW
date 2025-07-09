@@ -8,11 +8,11 @@ export default function Groceries() {
     const [deleteCount, setDeleteCount] = useState(0)
 
     const uncompletedItemCheck = groceries.find(
-        (i) => i.toLowerCase() === input.toLowerCase()
+        (i) => i.toLowerCase() === input.trim().toLowerCase()
     )
 
     const completedItemCheck = completed.find(
-        (i) => i.name.toLowerCase() === input.toLowerCase()
+        (i) => i.name.toLowerCase() === input.trim().toLowerCase()
     )
 
     const timeToNewGroceryPurchase = 2 * 24 * 60 * 60 * 1000
@@ -94,7 +94,7 @@ export default function Groceries() {
                 <ul style={{ padding: 0 }}>
                     {completed.map((item) => (
                         <li
-                            key={item.name}
+                            key={item.boughtAt}
                             style={{
                                 display: 'flex',
                                 width: 300,
