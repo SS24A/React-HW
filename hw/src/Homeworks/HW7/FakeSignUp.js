@@ -3,60 +3,51 @@ import processData from './processData'
 
 //Version with checkboxes
 export function FakeSignUp1() {
-    const firstNameInputRef = useRef(null)
-    const lastNameInputRef = useRef(null)
-    const genderMaleRef = useRef(null)
-    const genderFemaleRef = useRef(null)
-    const colorInputRef = useRef(null)
-    const birthdayInputRef = useRef(null)
-    const ageInputRef = useRef(null)
+    const [formData, setFormData] = useState({ age: "", gender: "", color: "#000000", firstName: "", lastName: "", birthdate: "" })
     const countFailedAttempts = useRef(0)
     const [message, setMessage] = useState('')
     const bannedSubmitText = 'You are banned from submitting again'
 
-    return (
-        <form
-            onSubmit={(e) => {
-                e.preventDefault()
-                const result = processData({
-                    age: ageInputRef.current.value,
-                    gender: genderMaleRef.current.checked ? 'male' : 'female',
-                    color: colorInputRef.current.value,
-                    firstname: firstNameInputRef.current.value,
-                    lastname: lastNameInputRef.current.value,
-                    birthdate: birthdayInputRef.current.value,
-                })
-                if (!result.success)
-                    countFailedAttempts.current =
-                        countFailedAttempts.current + 1
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        const result = processData({
+            age: formData.age,
+            gender: formData.gender,
+            color: formData.color,
+            firstname: formData.firstName,
+            lastname: formData.lastName,
+            birthdate: formData.birthdate,
+        })
+        if (!result.success) countFailedAttempts.current += 1
+        console.log(formData)
 
-                const messageToDisplay =
-                    countFailedAttempts.current < 6
-                        ? result.message
-                        : bannedSubmitText
-                setMessage(messageToDisplay)
-            }}
-        >
+        setMessage(countFailedAttempts.current < 6
+            ? result.message
+            : bannedSubmitText)
+    }
+
+    return (
+        <form onSubmit={(e) => handleSubmit(e)}>
             <input
                 placeholder="First Name"
-                ref={firstNameInputRef}
                 name="firstName"
+                value={formData.firstName}
+                onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
             />
             <input
                 placeholder="Last Name"
-                ref={lastNameInputRef}
                 name="lastName"
+                value={formData.lastName}
+                onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
             />
 
             <p>
                 <input
                     type="checkbox"
                     name="gender"
-                    ref={genderMaleRef}
-                    onChange={(e) => {
-                        if (e.target.checked)
-                            genderFemaleRef.current.checked = false //added to disable selection of both male and female
-                    }}
+                    value="male"
+                    checked={formData.gender === "male"}
+                    onChange={(e) => setFormData({ ...formData, gender: e.target.value })}
                 />
                 Male
             </p>
@@ -64,23 +55,21 @@ export function FakeSignUp1() {
                 <input
                     type="checkbox"
                     name="gender"
-                    ref={genderFemaleRef}
-                    onChange={(e) => {
-                        if (e.target.checked)
-                            genderMaleRef.current.checked = false
-                    }}
+                    value="female"
+                    checked={formData.gender === "female"}
+                    onChange={(e) => setFormData({ ...formData, gender: e.target.value })}
                 />
                 Female
             </p>
 
             <p>
                 Favorite Color
-                <input type="color" ref={colorInputRef} name="color" />
+                <input type="color" name="color" value={formData.color} onChange={(e) => setFormData({ ...formData, color: e.target.value })} />
             </p>
 
             <p>
                 Birthday
-                <input type="date" ref={birthdayInputRef} name="birthday" />
+                <input type="date" name="birthday" value={formData.birthdate} onChange={(e) => setFormData({ ...formData, birthdate: e.target.value })} />
             </p>
 
             <p>
@@ -91,7 +80,8 @@ export function FakeSignUp1() {
                     name="age"
                     min={1}
                     max={100}
-                    ref={ageInputRef}
+                    value={formData.age}
+                    onChange={(e) => setFormData({ ...formData, age: e.target.value })}
                 />
             </p>
 
@@ -103,52 +93,46 @@ export function FakeSignUp1() {
 
 //Version with dropdown (select)
 export function FakeSignUp2() {
-    const firstNameInputRef = useRef(null)
-    const lastNameInputRef = useRef(null)
-    const genderRef = useRef(null)
-    const colorInputRef = useRef(null)
-    const birthdayInputRef = useRef(null)
-    const ageInputRef = useRef(null)
+    const [formData, setFormData] = useState({ age: "", gender: "", color: "#000000", firstName: "", lastName: "", birthdate: "" })
     const countFailedAttempts = useRef(0)
     const [message, setMessage] = useState('')
     const bannedSubmitText = 'You are banned from submitting again'
 
-    return (
-        <form
-            onSubmit={(e) => {
-                e.preventDefault()
-                const result = processData({
-                    age: ageInputRef.current.value,
-                    gender: genderRef.current.value,
-                    color: colorInputRef.current.value,
-                    firstname: firstNameInputRef.current.value,
-                    lastname: lastNameInputRef.current.value,
-                    birthdate: birthdayInputRef.current.value,
-                })
-                if (!result.success)
-                    countFailedAttempts.current =
-                        countFailedAttempts.current + 1
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        const result = processData({
+            age: formData.age,
+            gender: formData.gender,
+            color: formData.color,
+            firstname: formData.firstName,
+            lastname: formData.lastName,
+            birthdate: formData.birthdate,
+        })
+        if (!result.success) countFailedAttempts.current += 1
+        console.log(formData)
+        setMessage(countFailedAttempts.current < 6
+            ? result.message
+            : bannedSubmitText)
+    }
 
-                const messageToDisplay =
-                    countFailedAttempts.current < 6
-                        ? result.message
-                        : bannedSubmitText
-                setMessage(messageToDisplay)
-            }}
-        >
+    return (
+        <form onSubmit={(e) => handleSubmit(e)}>
             <input
                 placeholder="First Name"
-                ref={firstNameInputRef}
                 name="firstName"
+                value={formData.firstName}
+                onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
             />
             <input
                 placeholder="Last Name"
-                ref={lastNameInputRef}
                 name="lastName"
+                value={formData.lastName}
+                onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
             />
+
             <p>
                 Gender
-                <select ref={genderRef} name="gender" defaultValue={''}>
+                <select name="gender" defaultValue={''} onChange={(e) => setFormData({ ...formData, gender: e.target.value })}>
                     <option value={''} disabled>
                         -------
                     </option>
@@ -159,12 +143,12 @@ export function FakeSignUp2() {
 
             <p>
                 Favorite Color
-                <input type="color" ref={colorInputRef} name="color" />
+                <input type="color" name="color" value={formData.color} onChange={(e) => setFormData({ ...formData, color: e.target.value })} />
             </p>
 
             <p>
                 Birthday
-                <input type="date" ref={birthdayInputRef} name="birthday" />
+                <input type="date" name="birthday" value={formData.birthdate} onChange={(e) => setFormData({ ...formData, birthdate: e.target.value })} />
             </p>
 
             <p>
@@ -175,7 +159,8 @@ export function FakeSignUp2() {
                     name="age"
                     min={1}
                     max={100}
-                    ref={ageInputRef}
+                    value={formData.age}
+                    onChange={(e) => setFormData({ ...formData, age: e.target.value })}
                 />
             </p>
 
@@ -184,3 +169,4 @@ export function FakeSignUp2() {
         </form>
     )
 }
+

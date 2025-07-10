@@ -14,7 +14,7 @@ import SectionHero from './SectionHero'
 import SectionFeatures from './SectionFeatures'
 import SectionCTA from './SectionCTA'
 import SectionPricing from './SectionPricing'
-import './h1styles.css'
+// import './h1styles.css'
 
 export default function Cruip() {
     return (
