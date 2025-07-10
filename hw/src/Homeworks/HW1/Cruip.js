@@ -14,7 +14,7 @@ import SectionHero from './SectionHero'
 import SectionFeatures from './SectionFeatures'
 import SectionCTA from './SectionCTA'
 import SectionPricing from './SectionPricing'
-// import './h1styles.css'
+import './h1styles.css'
 
 export default function Cruip() {
     return (
@@ -25,7 +25,7 @@ export default function Cruip() {
                 srcMobile={mobile}
                 srcClose={close}
             />
-            <main>
+            <main className="main">
                 <SectionHero />
                 <SectionFeatures />
                 <SectionPricing />
@@ -37,6 +37,6 @@ export default function Cruip() {
                 srcTwitter={twitter}
                 srcGoogle={google}
             />
-        </div>
+        </div >
     )
 }

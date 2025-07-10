@@ -6,7 +6,7 @@ export default function Header({
 }) {
     return (
         <header className="site-header">
-            <div className="container">
+            <div className="container-header">
                 <div className="site-header-inner">
                     <div className="brand header-brand">
                         <a href="#">
@@ -18,12 +18,12 @@ export default function Header({
                         </a>
                     </div>
 
-                    <div>
+                    <div className="header-images">
                         <img src={srcDesktop} alt="desktop" />
                         <img src={srcMobile} alt="mobile" />
                     </div>
 
-                    <div>
+                    <div className="header-end">
                         <button>
                             <a href="#" target="_blank">
                                 Download
